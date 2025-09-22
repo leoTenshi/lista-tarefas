@@ -26,11 +26,6 @@
         }
 
         public function alterarStatus($id, $novoStatus) {
-            $statusPermitidos = ['pendente', 'em_andamento', 'concluida'];
-
-            if (!in_array($novoStatus, $statusPermitidos)) {
-                throw new Exception("Status inválido.");
-            }
             return $this->dao->atualizarStatus($id, $novoStatus);
         }
 
